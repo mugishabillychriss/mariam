@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariam Handwork - Premium Made in Rwanda Bags</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #2c3e50;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #f1c40f;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.2rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background: #f1c40f;
+            color: #2c3e50;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1547949003-9792a18a2601?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 5%;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .hero-content .flag {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #f1c40f;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s;
+            margin: 0.5rem;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #f1c40f;
+            margin: 1rem auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .stat h3 {
+            font-size: 2rem;
+            color: #f1c40f;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Products Section */
+        .products {
+            background: #f8f9fa;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #27ae60;
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Market Opportunity */
+        .market-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .market-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .market-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .market-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .market-list {
+            list-style: none;
+            text-align: left;
+        }
+
+        .market-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .market-list li:before {
+            content: "✓";
+            color: #27ae60;
+            margin-right: 0.5rem;
+        }
+
+        /* Business Model */
+        .business-model {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+
+        .business-model .section-title {
+            color: white;
+        }
+
+        .business-model .section-title::after {
+            background: white;
+        }
+
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .revenue-stream {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .revenue-stream h3 {
+            margin-bottom: 1rem;
+            color: #f1c40f;
+        }
+
+        .price-example {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        /* Social Impact */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .impact-card {
+            text-align: center;
+        }
+
+        .impact-number {
+            font-size: 3rem;
+            color: #f1c40f;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #f8f9fa;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .testimonial-role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #f1c40f;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+        }
+
+        .submit-btn {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background: #f1c40f;
+            color: #2c3e50;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .about-content,
+            .market-grid,
+            .business-grid,
+            .impact-grid,
+            .testimonial-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 60px;
+            z-index: 100;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Mariam <span>Handwork</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#market">Market</a></li>
+            <li><a href="#business">Business</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="flag">🇷🇼</div>
+            <h1>Mariam Handwork</h1>
+            <p>Handmade Leather Bags – Proudly Made in Rwanda. Combining traditional craftsmanship with modern design, creating sustainable style with purpose.</p>
+            <a href="#products" class="btn">View Collection</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About Mariam Handwork</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Mariam Handwork is a Rwandan bag manufacturing business dedicated to producing high-quality, handmade leather and artisan bags. Founded by Mariam, our mission is to promote the "Made in Rwanda" brand through stylish, durable products that tell a story.</p>
+                <p>We combine local materials with skilled Rwandan craftsmanship to create bags that are both beautiful and affordable. Every bag is carefully crafted by local artisans who take pride in their work, ensuring each piece is unique and of the highest quality.</p>
+                <p>Our vision is to make Made in Rwanda bags a recognized global brand while empowering local communities through sustainable employment.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <h3>50+</h3>
+                    <p>Artisans Employed</p>
+                </div>
+                <div class="stat">
+                    <h3>1000+</h3>
+                    <p>Bags Sold</p>
+                </div>
+                <div class="stat">
+                    <h3>5+</h3>
+                    <p>Product Lines</p>
+                </div>
+                <div class="stat">
+                    <h3>100%</h3>
+                    <p>Handmade</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2 class="section-title">Our Bags Collection</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1591561954557-26941169b49e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="product-info">
+                    <h3>Premium Leather Tote</h3>
+                    <p class="product-price">45,000 RWF</p>
+                    <p class="product-description">Spacious, durable, and elegant. Perfect for work or travel. Made from genuine Rwandan leather.</p>
+                    <a href="https://wa.me/25078xxxxxxx?text=I'm%20interested%20in%20the%20Premium%20Leather%20Tote" class="product-btn">Order via WhatsApp</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1584917865442-4b3e5b4b8b9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="product-info">
+                    <h3>Handwoven Basket Bag</h3>
+                    <p class="product-price">35,000 RWF</p>
+                    <p class="product-description">Traditional Rwandan weaving technique with modern design. Lightweight and unique.</p>
+                    <a href="https://wa.me/25078xxxxxxx?text=I'm%20interested%20in%20the%20Handwoven%20Basket%20Bag" class="product-btn">Order via WhatsApp</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="product-info">
+                    <h3>Leather Crossbody Bag</h3>
+                    <p class="product-price">30,000 RWF</p>
+                    <p class="product-description">Compact and stylish. Perfect for everyday use. Adjustable strap and multiple pockets.</p>
+                    <a href="https://wa.me/25078xxxxxxx?text=I'm%20interested%20in%20the%20Leather%20Crossbody%20Bag" class="product-btn">Order via WhatsApp</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1566150905458-1bf1fc113f0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80')"></div>
+                <div class="product-info">
+                    <h3>Weekender Travel Bag</h3>
+                    <p class="product-price">65,000 RWF</p>
+                    <p class="product-description">Spacious travel companion. Made from durable leather and traditional kitenge fabric.</p>
+                    <a href="https://wa.me/25078xxxxxxx?text=I'm%20interested%20in%20the%20Weekender%20Travel%20Bag" class="product-btn">Order via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity -->
+    <section id="market">
+        <h2 class="section-title">Market Opportunity</h2>
+        <div class="market-grid">
+            <div class="market-card">
+                <div class="market-icon">🇷🇼</div>
+                <h3>Local Market</h3>
+                <ul class="market-list">
+                    <li>Growing Rwandan middle class</li>
+                    <li>"Made in Rwanda" movement</li>
+                    <li>Local fashion enthusiasts</li>
+                    <li>Corporate gift market</li>
+                </ul>
+            </div>
+            <div class="market-card">
+                <div class="market-icon">✈️</div>
+                <h3>Tourists</h3>
+                <ul class="market-list">
+                    <li>1.5M+ tourists yearly</li>
+                    <li>Authentic souvenir seekers</li>
+                    <li>Gorilla trekking visitors</li>
+                    <li>Conference attendees</li>
+                </ul>
+            </div>
+            <div class="market-card">
+                <div class="market-icon">🌍</div>
+                <h3>International</h3>
+                <ul class="market-list">
+                    <li>Ethical fashion buyers</li>
+                    <li>African diaspora</li>
+                    <li>Export to Europe/USA</li>
+                    <li>Online global market</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model -->
+    <section id="business" class="business-model">
+        <h2 class="section-title">Business Model</h2>
+        <div class="business-grid">
+            <div class="revenue-stream">
+                <h3>Revenue Streams</h3>
+                <ul class="market-list">
+                    <li>Direct sales (local markets & shops)</li>
+                    <li>Online sales via website</li>
+                    <li>Wholesale to boutiques</li>
+                    <li>Tourist stores & hotels</li>
+                    <li>Corporate bulk orders</li>
+                </ul>
+            </div>
+            <div class="revenue-stream">
+                <h3>Pricing Strategy</h3>
+                <div class="price-example">
+                    <p><strong>Production cost:</strong> 10,000 - 20,000 RWF</p>
+                    <p><strong>Selling price:</strong> 30,000 - 65,000 RWF</p>
+                    <p><strong>Profit margin:</strong> 50-70%</p>
+                </div>
+                <p style="margin-top: 1rem;">Affordable pricing through smart sourcing, not low quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Impact -->
+    <section id="impact">
+        <h2 class="section-title">Our Social Impact</h2>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-number">50+</div>
+                <p>Jobs Created for Local Artisans</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-number">80%</div>
+                <p>Women Artisans</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-number">100%</div>
+                <p>Locally Sourced Materials</p>
+            </div>
+            <div class="impact-card">
+                <div class="impact-number">₣5M+</div>
+                <p>Paid to Artisans</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 2rem; font-size: 1.2rem;">Every bag sold helps support artisan communities and empowers women in Rwanda.</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I bought the leather tote during my visit to Kigali. The quality is amazing and I get compliments everywhere I go in New York!"</p>
+                <p class="testimonial-author">Sarah Johnson</p>
+                <p class="testimonial-role">Tourist from USA</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"As a Rwandan living abroad, I love carrying a piece of home with me. The craftsmanship is exceptional."</p>
+                <p class="testimonial-author">Jean Paul</p>
+                <p class="testimonial-role">Customer in Belgium</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"We ordered 20 bags as corporate gifts. The quality and service were excellent. Highly recommended!"</p>
+                <p class="testimonial-author">Bank of Kigali</p>
+                <p class="testimonial-role">Corporate Client</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 1.5rem;">Get in Touch</h3>
+                <div class="contact-detail">
+                    <span class="contact-icon">📍</span>
+                    <div>
+                        <strong>Location</strong><br>
+                        Kigali, Rwanda
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-icon">📞</span>
+                    <div>
+                        <strong>Phone</strong><br>
+                        +250 78X XXX XXX
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-icon">📧</span>
+                    <div>
+                        <strong>Email</strong><br>
+                        info@mariamhandwork.rw
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <span class="contact-icon">⏰</span>
+                    <div>
+                        <strong>Hours</strong><br>
+                        Mon-Fri: 8am - 6pm<br>
+                        Sat: 9am - 2pm
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="text" placeholder="Subject">
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Mariam Handwork - Proudly Made in Rwanda 🇷🇼</p>
+        <div class="social-links">
+            <a href="#">📘</a>
+            <a href="#">📷</a>
+            <a href="#">🐦</a>
+            <a href="#">📌</a>
+        </div>
+        <p>&copy; 2026 Mariam Handwork. All rights reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/25078xxxxxxx" class="whatsapp-float" target="_blank">💬</a>
+</body>
+</html>
